@@ -1,0 +1,147 @@
+- summary: |
+    Проверка успешной авторизации
+  requirement: |
+    Пользователь может авторизоваться через электронную почту
+  prerequisites: |
+    empty
+  test-data: |
+    Email = tester2024@test.ru Password = password100500
+  steps: 
+    - Нажать на кнопку "Sign in"
+    - Ввести Email
+    - Ввести Password
+    - Нажать "Submit"
+  expected-result: |
+    Пользователь успешно авторизован
+
+
+- summary: |
+    Проверка авторизации через Github
+  requirement: |
+    Пользователь может авторизоваться с помощью Github
+  prerequisites: |
+    Созданный аккаунт Github
+  test-data: |
+    empty
+  steps: 
+    - Нажать на кнопку Sign up
+    - Нажать кнопку "Sign in with Github"
+  expected-result: |
+    Пользователь успешно авторизован
+
+
+- summary: |
+    Проверка авторизации через Discord
+  requirement: |
+    Пользователь может авторизоваться через Discord
+  prerequisites: |
+    Созданный аккаунт Discord
+  test-data: |
+    empty
+  steps: 
+    - Нажать на кнопку Sign up
+    - Нажать кнопку "Sign in with Discord"
+  expected-result: |
+    Пользователь успешно авторизован
+
+
+- summary: |
+    Проверка создания игры без регистрации
+  requirement: |
+    Неавторизованный пользователь может запустить пробную игру
+  prerequisites: |
+    Пользователь не авторизован
+  test-data: |
+    empty
+  steps: 
+    - На главной странице нажать на кнопку "Try simple battle"
+  expected-result: |
+    Игра без регистрации успешно создана
+
+
+- summary: |
+    Проверка, сортировки таблицы рейтинга
+  requirement: |
+    Пользователь может отсортировать пользователей по Rank, Rating, Games Played, Joined в таблице рейтинга
+  prerequisites: |
+    Пользователь авторизован
+  test-data: |
+    empty
+  steps: 
+    - Перейти на https://codebattle.hexlet.io/users
+    - Выбрать любой раздел, например, monthly
+    - Отсортировать по любому полю, например, rating, по возрастанию
+  expected-result: |
+    Пользователи сортируются по указанному полю по возрастанию
+
+
+- summary: |
+    Проверка выбора языка в активной игре
+  requirement: |
+    Пользователь может выбрать язык для решения задачи в игре
+  prerequisites: |
+    empty
+  test-data: |
+    empty
+  steps: 
+    - Создать игру, например, с ботом
+    - В игре в дроп-меню выбрать любой язык, например, Python 
+  expected-result: |
+    Язык сменился на выбранный
+
+
+- summary: |
+    Проверка возможности сдаться в игре
+  requirement: |
+    Пользователь может сдаться в игре
+  prerequisites: |
+    empty
+  test-data: |
+    empty
+  steps: 
+    - Создать любую игру, например, с ботом
+    - В игровом окне нажать на красной флажок "Give up"
+    - В модальном окне подтвердить действие, нажав на красную кнопку Give up
+    - В новом модальном окне 'If you read this you've lost the game' нажать на кнопку "I'll be back"
+  expected-result: |
+    Пользователь проиграл
+
+- summary: |
+    Проверка, создания игры с ботом
+  requirement: |
+    Авторизованный пользователь может создать игру с ботом
+  prerequisites: |
+    Пользователь авторизовался в системе
+  test-data: |
+    empty
+  steps: 
+    - На главной странице нажать на кнопку "Create a game"
+    - Указать в Game Type "With a bot"
+    - Задать желаемые для игры параметры
+    - Нажать на кнопку "Create battle"
+  expected-result: |
+    Игра с ботом успешно создана
+
+
+- summary: |
+    Проверка создания игры с другим пользоватеелм
+  requirement: |
+    Пользователь может присоединиться к игре по приглашению другого игрока
+  prerequisites: |
+    Пользователь 1 авторизован под email.
+    Пользователь 2 авторизован под email tester2024@test.ru/password100500
+  test-data: |
+    Level: 1 звезда
+    Time Control: 8 min
+    Choose task by name or tags: random  task
+  steps: 
+    - Нажать на кнопку "Create game" под Пользователем 1
+    - Выбрать любой Game Type, например, "With a friend"
+    - Выбрать в качестве оппонента Пользователя 2.
+    - Задать данные игры из тестовых данных
+    - Нажать на кнопку "Create invite"
+    - На аккаунте Пользователя 2 нажать на иконку "Invites"
+    - Принять приглашение пользователя
+  expected-result: |
+    Игра с другим пользователем успешно создана
+    
