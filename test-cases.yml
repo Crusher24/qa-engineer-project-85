@@ -68,7 +68,7 @@
   test-data: |
     empty
   steps: 
-    - Перейти на https://codebattle.hexlet.io/users
+    - Перейти на страницу со списком пользователей
     - Выбрать любой раздел, например, monthly
     - Отсортировать по любому полю, например, rating, по возрастанию
   expected-result: |
