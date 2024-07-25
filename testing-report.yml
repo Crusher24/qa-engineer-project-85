@@ -130,3 +130,11 @@
 - summary: |
     Проверка просмотра записи завершенной игры
   status: pass
+
+- summary: |
+    Простота навигации
+  status: pass
+
+- summary: |
+    Верстка сайта
+  status: fail
