@@ -36,6 +36,14 @@
   status: fail
 
 - summary: |
+    Пользователь может обнулить solution
+  status: pass
+
+- summary: |
+    Пользователь может запустить проверку solution
+  status: pass
+
+- summary: |
     Проверка возможного исхода игры, как ничья
   status: pass
 
