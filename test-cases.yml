@@ -576,3 +576,45 @@
   expected-result: |
     Победа присуждается пользователю, который первым правильно решил задачу
 
+- summary: |
+    Обнуление solution
+  requirement: |
+    Пользователь может обнулить solution
+  prerequisites:
+    Пользователь авторизован
+  test-data: |
+    no data
+  steps:
+    - Нажать Create a game
+    - Выбрать параметры игры
+    - Нажать Create battle
+    - В игровом поле solution напечатать любой набор символов
+    - Нажать Reset solution
+  expected-result: |
+    В игровом поле "solution" обнулился до начальных значений
+
+
+- summary: |
+    Запуск проверки solution
+  requirement: |
+    Пользователь может запустить проверку solution
+  prerequisites:
+    Пользователь авторизован
+  test-data: |
+    Task = rect area
+    Код для победы в игре:
+    const _ = require("lodash");
+    const R = require("rambda");
+    const solution = (width, length) => {
+    return width * length;
+    };
+    module.exports = solution;
+  steps:
+    - Нажать Create a game
+    - Выбрать параметры игры
+    - Нажать Create battle
+    - Записать в solution код решения данного задания 
+    - Нажать кнопку Run
+  expected-result: |
+    Появилось окно Woohoo, you're Champion!!!!!, во вкладке output появилось сообщение Yay! All tests passed!!111 код прошел проверку
+
