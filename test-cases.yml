@@ -618,3 +618,17 @@
   expected-result: |
     Появилось окно Woohoo, you're Champion!!!!!, во вкладке output появилось сообщение Yay! All tests passed!!111 код прошел проверку
 
+- summary: |
+    Выход из профиля
+  requirement: |
+    Пользователь может выйти из профиля
+  prerequisites: |
+    Пользователь авторизован
+  test-data: |
+    no data
+  steps:
+    - Нажать на навигационное меню
+    - Нажать Sign Out
+  expected-result: |
+    Выход пользователя из приложения выполнен успешно
+
