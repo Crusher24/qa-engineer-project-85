@@ -548,3 +548,31 @@
     - Проанализировать расположение основных элементов интерфейса (баннеры, меню, кнопки, поля ввода)
   expected-result: |
     Все элементы сайта отображаются корректно
+
+- summary: |
+    Проверка победы в матче
+  requirement: |
+    Победа присуждается первому правильно решившему задачу пользователю
+  prerequisites:
+    Открыты главные страницы CodeBattle двух атворизованных пользователей с разных браузеров
+  test-data: |
+    Пользователь 1 = email lolik@ya.ru, password 12345678
+    Пользователь 2 = email bolik@fgoogle.com, password 12345678
+    Task = rect area
+    Код для победы в игре:
+    const _ = require("lodash");
+    const R = require("rambda");
+    const solution = (width, length) => {
+    return width * length;
+    };
+    module.exports = solution;
+  steps:
+    - Нажать Create a game
+    - Выбрать параметры игры
+    - Нажать Create battle
+    - На втором аккаунте принять игру нажав accept
+    - Вставить код для победы
+    - Нажать Run
+  expected-result: |
+    Победа присуждается пользователю, который первым правильно решил задачу
+
